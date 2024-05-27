@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+
+<section class="vh-100" style="background-color: #fceeca;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-9">
+
+        <h1 class="text-white mb-4">Students Register</h1>
+        <a href="{% url 'list' %}"> <h2>view list</h2> </a>
+<form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+   {% csrf_token %}
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body">
+
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">Full name</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <input type="text" name="name" class="form-control form-control-lg" />
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">Age</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <input type="text" name="age" class="form-control form-control-lg" placeholder="Enter age" />
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">Address</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <textarea class="form-control" name="address" rows="3" placeholder="Enter your Address"></textarea>
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">Image</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <input class="form-control form-control-lg" id="formFileLg" type="file" name="img"/>
+                <div class="small text-muted mt-2">Upload your Photo. Max file
+                  size 50 MB</div>
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="px-5 py-4">
+              <button type="submit" class="btn btn-primary btn-lg">Send</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</form>
+</section>
+
+</body>
+</html>
